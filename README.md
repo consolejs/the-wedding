@@ -1,5 +1,9 @@
 
 
+## 感谢
+
+> 特别说明：Forked from [leadream/wedding-invitation-for-programmers](https://github.com/leadream/wedding-invitation-for-programmers), 略作改动后自用， 感谢作者~
+
 ## 开发
 ```
 yarn install
