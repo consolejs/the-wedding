@@ -4,11 +4,11 @@
       <div class="invitation-cover">
         <div class="cover-content" :class="{'invitation-up':isOpening}">
           <div class="content-inside">
-            <img class="content-inside-photo" src="../images/photo.jpg">
+            <img class="content-inside-photo" src="../images/o1.jpg">
             <p>我们结婚啦！</p>
-            <p><b>Jun & undefined</b></p>
-            <p>时间：invalid date value</p>
-            <p>地点：<b>location can not be found</b></p>
+            <p><b>李坤 & 谢东苡</b></p>
+            <p>时间：2021年4月24日, 星期六</p>
+            <p>地点：<b>济南罗芙威宫酒店 米兰宴会厅</b></p>
             <div class="content-inside-bless">
               <input
                 placeholder="写下你的祝福" 
@@ -22,6 +22,9 @@
               <div>
                 <button @click="sendBarrage">发送祝福弹幕</button>
                 <button @click="closeInvitation">关闭</button>
+              </div>
+              <div class="jump">
+                <button @click="jumpUrl">去网站逛逛</button>
               </div>
             </div>
           </div>
@@ -66,9 +69,13 @@ export default {
         this.isOpening = false
         this.$refs.wishInput.blur()
         setTimeout(() => {
-          this.$emit('sendBarrage', this.wish)
+          this.$emit('sendBarrage', this.wish);
+          $cookies.set("lastvalue", this.wish,60 * 60 * 24 * 30);// 1 month after, expire
         }, 660)
       })
+    },
+    jumpUrl(){
+      window.location.href = 'http://lkxdy.com/';
     }
   }
 }
@@ -242,6 +249,9 @@ export default {
           }
         }
       }
+    }
+    .jump{
+      padding-top: 10px;
     }
   }
 </style>

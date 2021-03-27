@@ -22,6 +22,11 @@
         <line x1="9" y1="3" x2="9" y2="21"></line>
       </svg>
     </div>
+    <div 
+    class="open-site"
+      v-if="(canStart || hasClosed) && !canOpen"
+      @click="jumpUrl"
+    >逛</div>
     <Executions :canExecute="canExecute" @onUpdating="scrollToBottom" @onFinish="canOpen = true"/>
     <invitation :canOpen="canOpen" @onClose="canOpen = false, hasClosed = true" @sendBarrage="onAfterSending"/>
     <Barrage :wish="wish" :canStart="canStart"/>
@@ -111,6 +116,9 @@
         setTimeout(() => {
           this.canStart = true
         }, 800)
+      },
+      jumpUrl(){
+        window.location.href = 'http://lkxdy.com/';
       }
     }
   }
@@ -183,6 +191,21 @@
   .editor-open{
     position: fixed;
     right: 20px;
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 18px;
+    border: 5px solid #ffd69b;
+    color: #a9895d;
+    background: #FFF1DE;
+    z-index: 1000;
+  }
+  .open-site{
+    position: fixed;
+    left: 20px;
     bottom: 20px;
     width: 40px;
     height: 40px;
