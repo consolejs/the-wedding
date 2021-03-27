@@ -4,7 +4,7 @@
       <div class="invitation-cover">
         <div class="cover-content" :class="{'invitation-up':isOpening}">
           <div class="content-inside">
-            <img class="content-inside-photo" src="../images/o1.jpg">
+            <img class="content-inside-photo" src="@/images/o1.jpg">
             <p>我们结婚啦！</p>
             <p><b>李坤 & 谢东苡</b></p>
             <p>时间：2021年4月24日, 星期六</p>
@@ -31,7 +31,7 @@
         </div>
         <div class="cover-inside-left" :class="{'opening':isOpening}"></div>
         <div class="cover-inside-right" :class="{'opening':isOpening}"></div>
-        <img class="cover-inside-seal" src="../images/seal.png" @click="openInvitation" :class="{'invitation-flight':isOpening}">
+        <img class="cover-inside-seal" src="@/images/seal.png" @click="openInvitation" :class="{'invitation-flight':isOpening}">
       </div>
     </div>
   </div>
